@@ -3,12 +3,19 @@ public class StringReverse {
     public String reverseAlphabeticCharsOnly(String str) {
         requiredNonNull(str);
 
-        String resultStrings = "";
-        String[] splitWords = str.split(" ");
+        StringBuilder resultStrings = new StringBuilder();
+        String[] splitWords = str.split("[\\s+]");
         for (String words : splitWords) {
-            resultStrings = resultStrings + reversesWord(words) + " ";
+            resultStrings.append(reversesWord(words));
         }
-        return resultStrings.trim();
+
+        for (int i = 0; i < str.length(); i++) {
+            if (Character.isWhitespace(str.charAt(i))) {
+                resultStrings.insert(i, str.charAt(i));
+            }
+        }
+        return resultStrings.toString();
+
     }
 
     public String reversesWord(String word) {
