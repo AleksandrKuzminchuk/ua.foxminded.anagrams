@@ -21,7 +21,7 @@ public class StringReverse {
     public String reversesWord(String word) {
         requiredNonNull(word);
 
-        String alphabetic = word.replaceAll("[\\W\\d+]", "");
+        String alphabetic = word.replaceAll("[\\W\\d]", "");
         StringBuilder result = new StringBuilder(alphabetic);
         result.reverse();
 
