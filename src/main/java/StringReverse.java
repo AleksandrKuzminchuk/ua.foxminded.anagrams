@@ -1,3 +1,5 @@
+package main.java;
+
 public class StringReverse {
 
     public String reverseAlphabeticCharsOnly(String str) {
